@@ -14,6 +14,7 @@ find_package(SFML COMPONENTS Graphics Window System REQUIRED)
 file(GLOB_RECURSE PROJECT_SOURCES 
     CONFIGURE_DEPENDS
     "src/*.cpp"
+    "src/*.tpp"
     "src/*.hpp"
     "src/*.h"
 

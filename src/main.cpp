@@ -3,6 +3,7 @@
 
 
 int main() {
+    //the game
     Game::run();
 }
 

@@ -49,8 +49,8 @@ void core::withblock(Entity<float>& A, const Entity<float>& B)
             A.velocity *= -bounce;
             std::cout << "bounce" << std::endl;
 
-        }
     }
+    
 }
 
 void core::mainloop(sf::RenderWindow& mainwindow)
@@ -60,21 +60,15 @@ void core::mainloop(sf::RenderWindow& mainwindow)
     const float SPEED = 80;
     const float MAX_SPEED = 120;
 
-    Shapes::line myline(s, e, sf::Color::Black, sf::Color::Black);
-
+    //init the entities
     Entity<float> ball(Assets::ball, Vector<float>(Config::WindowWidth/2,Config::WindowHeight/2), 1 ,1,15);
     Entity<float> block(Assets::block, Vector<float>(Config::WindowWidth / 2, 500), 1.f,0.7,MAX_SPEED);
-    sf::Clock clock;
     
     ball.velocity = Vector<float>(3, 10);
     
     float dt;
     Vector<float> gravity = Config::GRAVITY;
     clock.start();
-    float last = 0;
-    float now;
-    bool left = false;
-    bool right = false;
     while (mainwindow.isOpen())
     
     {
