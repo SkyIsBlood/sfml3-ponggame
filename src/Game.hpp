@@ -2,6 +2,9 @@
 //things for everything to work
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <cmath>
+#include <print>
+#include <algorithm>
 #include <string>
 #include "physics/physics.hpp"
 #include "math/vector.hpp"

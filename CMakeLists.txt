@@ -18,12 +18,17 @@ file(GLOB_RECURSE PROJECT_SOURCES
     "src/*.h"
 
 )
+
 add_executable(firstgame ${PROJECT_SOURCES})
+
+# Emit preprocessed files (.i) when using MSVC
+
 add_custom_command(TARGET firstgame POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory
         "${CMAKE_CURRENT_SOURCE_DIR}/src/assets"
         "$<TARGET_FILE_DIR:firstgame>/assets"
 )
+
 target_compile_features(firstgame PRIVATE cxx_std_20)
 target_include_directories(firstgame PRIVATE src)
 
