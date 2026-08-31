@@ -16,6 +16,7 @@ file(GLOB_RECURSE PROJECT_SOURCES
     "src/*.cpp"
     "src/*.hpp"
     "src/*.h"
+
 )
 
 add_executable(firstgame ${PROJECT_SOURCES})

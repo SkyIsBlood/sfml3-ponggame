@@ -64,6 +64,7 @@ void core::withblock(Entity<float>& A, const Entity<float>& B)
         A.velocity.x = speed * std::cos(bounce_angle);
         A.velocity.y = - speed * std::sin(bounce_angle);
 
+        }
     }
 }
 
@@ -79,10 +80,12 @@ void core::mainloop(sf::RenderWindow& mainwindow)
     Vector<float> gravity = Config::GRAVITY;
     sf::Clock clock;
 
+    Shapes::line myline(s, e, sf::Color::Black, sf::Color::Black);
 
     //init the entities
     Entity<float> ball(Assets::ball, Vector<float>(Config::WindowWidth/2,Config::WindowHeight/2), 1 ,1,15);
     Entity<float> block(Assets::block, Vector<float>(Config::WindowWidth / 2, 500), 1.f,0.7,MAX_SPEED);
+    sf::Clock clock;
     
     //set the ball position
     ball.velocity = Vector<float>(3, 10);
@@ -90,6 +93,10 @@ void core::mainloop(sf::RenderWindow& mainwindow)
     
     
     clock.start();
+    float last = 0;
+    float now;
+    bool left = false;
+    bool right = false;
     while (mainwindow.isOpen())
     
     {
