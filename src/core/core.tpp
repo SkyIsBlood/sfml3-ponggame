@@ -35,7 +35,7 @@ void core::border(Entity<float>& e)
     }
 
 }
-void core::withblock(Entity<float>& A, const Entity<float>& B ,float dt)
+void core::withblock(Entity<float>& A, const Entity<float>& B)
 {
     // entity A is the ball while entity B is the static object
     float bounce = 1;
@@ -149,7 +149,7 @@ void core::mainloop(sf::RenderWindow& mainwindow)
         block.update(dt);
         ball.update(dt);
         core::border(ball);
-        core::withblock(ball, block,dt);
+        core::withblock(ball, block);
 
 
         // rendering to the screen 
