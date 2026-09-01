@@ -8,6 +8,10 @@ namespace Config {
     inline constexpr unsigned int WindowWidth = 800;
     inline constexpr unsigned int WindowHeight = 600;
     inline constexpr unsigned int FrameRateLimit = 60;
+    inline constexpr unsigned int BALL_SPEED = 5;
+    inline constexpr unsigned int LIVES = 3;
+
+
     inline constexpr sf::Color BACKGROUND = sf::Color(20,20,20);
     inline  Vector<float> GRAVITY = Vector<float>(0, 0.5);
     inline constexpr std::string_view WindowTitle = "My Game";
