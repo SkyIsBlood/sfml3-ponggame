@@ -78,7 +78,7 @@ void core::showhearts(int& hearts, sf::RenderWindow& mainwindow)
 {
     for ( int i = 0 ;i <  hearts ; i ++)
     {
-        Vector<float> scale(4, 4);
+        Vector<float> scale(1, 1);
         Vector<float> pos = Vector<float>((scale.x * (16 + 2)  * i  ), (0));
         
         Renderer::render_sprite(mainwindow , Assets::heart ,pos ,scale);
