@@ -1,3 +1,5 @@
+#include "setup.hpp"
+
 sf::RenderWindow& setup::getwindow()
 {
 	static sf::RenderWindow window(sf::VideoMode({ Config::WindowWidth,Config::WindowHeight }), "hello world");

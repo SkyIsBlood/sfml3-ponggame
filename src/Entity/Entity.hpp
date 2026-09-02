@@ -1,4 +1,9 @@
+#pragma once
 
+#include <SFML/Graphics.hpp>
+#include <string>
+#include "../math/vector.hpp"
+#include "../physics/physics.hpp"
 template <typename T>
 
 class Entity:public Body::Body<T>
