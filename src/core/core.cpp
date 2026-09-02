@@ -76,8 +76,22 @@ void core::showhearts(int& hearts, sf::RenderWindow& mainwindow)
     for ( int i = 0 ;i <  hearts ; i ++)
     {
         Vector<float> scale(1, 1);
-        Vector<float> pos = Vector<float>((scale.x * (16 + 2)  * i  ), (0));
+        Vector<float> pos = Vector<float>((scale.x * (16 + 2)  * i  ), (Config::WindowHeight - 64));
         
         Renderer::render_sprite(mainwindow , Assets::heart ,pos ,scale);
+    }
+}
+
+void core::showblocks(sf::RenderWindow& mainwindow) 
+{
+    std::vector<Entity<float>> blocks;
+    for (size_t i = 64; i < Config::WindowWidth;i += 74)
+    {
+        Entity<float> B(Assets::block, Vector<float>(i, 10), 1.f, 0, 0);
+        blocks.push_back(B);
+    }
+
+    for (auto block : blocks) {
+        Renderer::render_entity(mainwindow, block);
     }
 }

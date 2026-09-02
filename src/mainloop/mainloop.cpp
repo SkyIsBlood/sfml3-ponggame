@@ -17,6 +17,8 @@ void MAINLOOP::mainloop(sf::RenderWindow& mainwindow)
     //init the entities
     Entity<float> ball(Assets::ball, Vector<float>(Config::WindowWidth / 2, Config::WindowHeight / 2), 1, 1, 15);
     Entity<float> block(Assets::block, Vector<float>(Config::WindowWidth / 2, 500), 1.f, 0.2, MAX_SPEED);
+    
+
     ball.velocity.y = ball_speed;
 
     while (mainwindow.isOpen())
@@ -86,6 +88,7 @@ void MAINLOOP::mainloop(sf::RenderWindow& mainwindow)
         // rendering to the screen 
         Renderer::render_entity(mainwindow,ball);
         Renderer::render_entity(mainwindow,block);
+        core::showblocks(mainwindow);
         mainwindow.display();
     }
 }
